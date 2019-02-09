@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_constraint_layout"
+    tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/step_counter_cardview"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="80dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="90dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/step_complete_textview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arvo_bold"
+                android:gravity="end"
+                android:text="750"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/steps_left_textview"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/steps_left_textview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arvo"
+                android:gravity="start|center_vertical"
+                android:text="/1,000"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/step_complete_textview"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/arvo"
+                android:gravity="center"
+                android:text="Steps\nCompleted"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/step_complete_textview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.teamgreen.sensescare.CircleProgressBar
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:alpha="1"
+        android:elevation="15dp"
+        app:progressBarThickness="10dp"
+        app:progress="100"
+        android:layout_marginTop="75dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/calorie_label_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:drawableStart="@drawable/ic_whatshot_accent_24dp"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/arvo"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="Calories Burned"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/step_counter_cardview" />
+
+    <TextView
+        android:id="@+id/calorie_value_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/arvo"
+        android:paddingStart="15dp"
+        app:layout_constraintLeft_toLeftOf="@id/calorie_label_textview"
+        android:paddingEnd="15dp"
+        android:text="400 kcal"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@id/calorie_label_textview" />
+
+    <TextView
+        android:id="@+id/duration_label_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:drawableStart="@drawable/ic_schedule_accent_24dp"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/arvo"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="Duration"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toRightOf="@id/calorie_label_textview"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/step_counter_cardview" />
+
+    <TextView
+        android:id="@+id/duration_value_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/arvo"
+        android:paddingStart="15dp"
+        app:layout_constraintLeft_toLeftOf="@id/duration_label_textview"
+        android:paddingEnd="15dp"
+        android:text="20 min"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@id/duration_label_textview" />
+
+    <TextView
+        android:id="@+id/distance_label_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:drawableStart="@drawable/ic_location_on_black_24dp"
+        android:drawablePadding="5dp"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/arvo"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="Distance"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/calorie_value_textview" />
+
+    <TextView
+        android:id="@+id/distance_value_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/arvo"
+        android:paddingStart="15dp"
+        app:layout_constraintLeft_toLeftOf="@id/distance_label_textview"
+        android:paddingEnd="15dp"
+        android:text="2 km"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@id/distance_label_textview" />
+
+    <TextView
+        android:id="@+id/heartrate_label_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:drawableStart="@drawable/ic_favorite_aceent_24dp"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/arvo"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="Heart Rate"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toRightOf="@id/calorie_label_textview"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/duration_value_textview" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/arvo"
+        android:paddingStart="15dp"
+        app:layout_constraintLeft_toLeftOf="@id/heartrate_label_textview"
+        android:paddingEnd="15dp"
+        android:text="12 bpm"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@id/heartrate_label_textview" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
